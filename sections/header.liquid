@@ -333,7 +333,6 @@
     {%- endif -%}
 
     {%- unless request.page_type == 'index' -%}
-     
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
           {%- if section.settings.logo != blank -%}
             {%- assign image_size = section.settings.logo_width | append: 'x' -%}
@@ -349,7 +348,7 @@
             <span class="h2">{{ shop.name }}</span>
           {%- endif -%}
         </a>
-      {%- endunless -%}
+    {%- endunless -%}
 
     {%- if section.settings.menu != blank -%}
       <nav class="header__inline-menu">

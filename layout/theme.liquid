@@ -30,6 +30,7 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -103,6 +104,19 @@
           font-size: 1.6rem;
         }
       }
+      .bubble--sale{
+        background-image: url({{'bubble-sale.svg' | asset_url}})
+      }
+      .bubble--new{
+        background-image: url({{'bubble-new.svg' | asset_url}})
+      }
+      .bubble--fave{
+        background-image: url({{'bubble-fave.svg' | asset_url}})
+      }
+
+      #toTop{
+        background-image: url({{'bubble-fave.svg' | asset_url}})
+      }
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -126,13 +140,14 @@
       {{ "accessibility.skip_to_text" | t }}
     </a>
 
+    <button id="toTop"> </button>
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% section 'footer' %}
+    {% section 'moo-footer' %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
