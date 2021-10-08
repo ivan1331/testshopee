@@ -1,6 +1,10 @@
 .collection-grid-section {
-  margin-top: 3rem;
+  margin-top: 10rem;
+  position: relative;
 }
+
+
+
 
 .collection {
   position: relative;
